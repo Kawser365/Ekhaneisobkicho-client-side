@@ -15,7 +15,7 @@ const Checkout = () => {
     const result =  details.filter(detail=> detail.name == name)
     const info = result.map(product => product.price)
     const orderSubmit = () =>{
-        const products = {...loggedInUser.email, price:info, name:name}
+        const products = {...loggedInUser, price:info, name:name}
         fetch('https://floating-castle-80138.herokuapp.com/orderProduct', {
             method: 'POST',
             headers:{
